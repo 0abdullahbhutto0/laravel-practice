@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Welcome</title>
 </head>
+
 <body>
+    <div class="nav m-4 border-0 flex justify-around rounded-md px-3 py-2 bg-blue-100">
+        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+        <x-nav-link href="/about" :active="request()->is('about')" >About</x-nav-link>
+        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+    </div>
 
-    <x-nav-link>
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/about">About</a>
-        <a class="nav-link" href="/contact">Contact</a>
-    </x-nav-link>
 
-
-{{$slot}}
+    {{ $slot }}
 
 </body>
+
 </html>
