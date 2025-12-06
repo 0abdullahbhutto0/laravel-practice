@@ -13,7 +13,7 @@
 <body>
     <div class="nav m-4 border-0 flex justify-around rounded-md px-3 py-2 bg-blue-100">
         <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/about" :active="request()->is('about')" >About</x-nav-link>
+        <x-nav-link href="/jobs" :active="request()->is('jobs')" >About</x-nav-link>
         <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
     </div>
 
