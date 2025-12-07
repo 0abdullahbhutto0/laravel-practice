@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Employer;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -14,6 +15,6 @@ Route::get('/contact', function(){
 });
 Route::get('/job/{id}', function($id){
     $job = Job::find($id);
-
-    return view('job', ['job'=> $job]);
+    $employer = Employer::find($job->employer_id);
+    return view('job', ['job'=> $job, 'employer'=>$employer]);
 });
