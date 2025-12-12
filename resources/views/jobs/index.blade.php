@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :heading='"Jobs"'>
     <h1 class="text-2xl text-green-400 m-4">Hello From Jobs!</h1>
     <div class="space-y-4">
         @foreach ($jobs as $job)

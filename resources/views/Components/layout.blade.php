@@ -17,6 +17,12 @@
         <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
     </div>
 
+<div class="m-2 flex justify-between">
+    <div class="text-3xl">
+        {{ $heading }}
+    </div>
+    <x-button href="jobs/create">Create a Job</x-button>
+</div>
 <div class="m-2">
     {{ $slot }}
 </div>

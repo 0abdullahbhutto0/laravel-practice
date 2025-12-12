@@ -12,7 +12,10 @@ Route::get('/jobs', function(){
     return view('jobs/index', ['jobs'=> $jobs]);
 });
 Route::post('/jobs', function(){
-    //ALWAYS VALIDATE, NEVER TRUST THE USER
+    request()->validate([
+        'title'=>['required', 'min:3'],
+        'salary'=>['required']
+    ]);
 
     Job::create([
         'title'=>request('title'),
