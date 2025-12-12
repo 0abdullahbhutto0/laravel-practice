@@ -8,8 +8,12 @@ class Job extends Model
 {
     use HasFactory;
     protected $table = 'job_listings';
-    protected $fillable = ['title', 'salary'];
 
+    //upto you, if you want to update this everytime you want to assign a field with a bit of risk
+   // protected $fillable = ['title', 'salary', 'employer_id'];
+
+    //or disable the fillable property
+    protected $guarded = [];
     public function employer(){
         return $this->belongsTo(Employer::class);
     }

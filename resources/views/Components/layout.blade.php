@@ -17,8 +17,9 @@
         <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
     </div>
 
-
+<div class="m-2">
     {{ $slot }}
+</div>
 
 </body>
 

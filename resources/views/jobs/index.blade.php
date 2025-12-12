@@ -3,7 +3,7 @@
     <div class="space-y-4">
         @foreach ($jobs as $job)
             <a class="font-bold text-lg text-zinc-600 m-4 border border-gray-400 rounded-lg px-4 py-4 block"
-                href="job/{{ $job['id'] }}"><i style="font-size: 1rem" class="text-blue-300">{{ $job->employer->title }}<br></i><strong>
+                href="jobs/{{ $job['id'] }}"><i style="font-size: 1rem" class="text-blue-300">{{ $job->employer->title }}<br></i><strong>
                     {{ $job['title'] }}</strong></a>
         @endforeach
 
