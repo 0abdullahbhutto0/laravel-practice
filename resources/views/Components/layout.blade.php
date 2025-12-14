@@ -1,3 +1,5 @@
+@props(['heading'])
+
 <!doctype html>
 <html lang="en">
 
@@ -11,21 +13,27 @@
 </head>
 
 <body>
-    <div class="nav m-4 border-0 flex justify-around rounded-md px-3 py-2 bg-blue-100">
-        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/jobs" :active="request()->is('jobs')" >About</x-nav-link>
-        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+    <div class="nav m-4 border-0 flex justify-between rounded-md px-3 py-2 bg-blue-100">
+        <div>
+            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+            <x-nav-link href="/jobs" :active="request()->is('jobs')">About</x-nav-link>
+            <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+        </div>
+        <div>
+            <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
+            <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+        </div>
     </div>
 
-<div class="m-2 flex justify-between">
-    <div class="text-3xl">
-        {{ $heading }}
+    <div class="m-2 flex justify-between">
+        <div class="text-3xl">
+            {{ $heading }}
+        </div>
+        <x-button href="jobs/create">Create a Job</x-button>
     </div>
-    <x-button href="jobs/create">Create a Job</x-button>
-</div>
-<div class="m-2">
-    {{ $slot }}
-</div>
+    <div class="m-2">
+        {{ $slot }}
+    </div>
 
 </body>
 

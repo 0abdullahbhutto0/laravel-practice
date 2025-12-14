@@ -10,37 +10,34 @@
                 <p class="mt-1 text-sm/6 text-gray-600">Just some details you want to change.</p>
 
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-4">
-                        <label for="title" class="block text-sm/6 font-medium text-gray-900">Title</label>
+                    <x-form-field>
+                        <x-form-label>Title</x-form-label>
                         <div class="mt-2">
                             <div
                                 class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                                <input id="title" placeholder="Programmer" type="text" name="title"
-                                    value="{{ $job->title }}"
-                                    class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                               <x-form-input id="title" 
+                                    value="{{ $job->title }}" 
+                                    type="text"
+                                    name="title"
                                     required />
                             </div>
-                            @error('title')
-                                <p class="text-red-500 font-light m-2">{{ $message }}</p>
-                            @enderror
+                            <x-form-error name='title'></x-form-error>
                         </div>
-                    </div>
+                    </x-form-field>
 
-                    <div class="sm:col-span-4">
-                        <label for="salary" class="block text-sm/6 font-medium text-gray-900">Salary</label>
-                        <div class="mt-2">
+                    <x-form-field>
+                        <x-form-label>Salary</x-form-label>
                             <div
                                 class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                                <input id="salary" value="{{ $job->salary }}" placeholder="$12,000" type="text"
+                                <x-form-input id="salary" 
+                                    value="{{ $job->salary }}" 
+                                    type="text"
                                     name="salary"
-                                    class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                                     required />
                             </div>
                         </div>
-                        @error('salary')
-                            <p class="text-red-500 font-light m-2">{{ $message }}</p>
-                        @enderror
-                    </div>
+                        <x-form-error name='salary'></x-form-error>
+                    </x-form-field>
                 </div>
             </div>
         </div>
@@ -51,8 +48,7 @@
             </div>
             <div class="flex items-center gap-x-6">
                 <a href="/jobs/{{ $job->id }}" class="text-sm/6 font-semibold text-gray-900">Cancel</a>
-                <button type="submit"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
+                <x-form-submit-button type="submit">Update</x-form-submit-button>
             </div>
         </div>
     </form>
