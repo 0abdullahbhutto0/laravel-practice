@@ -20,8 +20,18 @@
             <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
         </div>
         <div>
+            @guest
             <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
             <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+            @endguest
+
+            @auth
+                <form method="POST" action="/logout">
+                    @csrf
+
+                    <x-form-submit-button>Logout</x-form-submit-button>
+                </form>
+            @endauth
         </div>
     </div>
 
@@ -29,7 +39,9 @@
         <div class="text-3xl">
             {{ $heading }}
         </div>
+        @auth
         <x-button href="jobs/create">Create a Job</x-button>
+        @endauth
     </div>
     <div class="m-2">
         {{ $slot }}

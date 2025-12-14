@@ -1,4 +1,4 @@
-<x-layout heading='Register'>
+<x-layout heading='Login'>
     <form method="POST" action="/login">
         @csrf
         <div class="space-y-12">
@@ -13,7 +13,8 @@
                             <div
                                 class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                                <x-form-input id="email" 
-                                    placeholder="abc@123.com" 
+                                    placeholder="abc@123.com"
+                                    :value="old('email')" 
                                     type="email"
                                     name="email"
                                     required />

@@ -64,7 +64,7 @@
                                     required />
                             </div>
                         </div>
-                        <x-form-error name='password'></x-form-error>
+                        <x-form-error name='password_confirmation'></x-form-error>
                     </x-form-field>
                 </div>
             </div>
